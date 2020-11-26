@@ -90,6 +90,9 @@ GOARCH=ppc64le
 %ifarch %{arm} aarch64
 GOOS=linux
 GOARCH=arm64
+
+# Create Binaries for all supported arches
+%{make} cross-build-darwin-arm64 GO_BUILD_PACKAGES:='./cmd/oc'
 %endif
 %ifarch s390x
 GOOS=linux
